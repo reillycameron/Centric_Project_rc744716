@@ -2,54 +2,122 @@
     ViewBag.Title = "Centric Home Page";
 }
 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Commit to Delivery Excellence</h2>
-            <p>
-                We have a passion for consulting excellence.
-                In all of our projects, we strive to first understand
-                your needs and then deliver on our commitments 100 percent of the time.
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Embrace Integrity and Openness</h2>
-            <p>We value strong, positive relationships that are open and honest. This differentiates us and allows us to accomplish much more than we would be able to otherwise.</p>
-        </div>
-        <div class="col-md-4">
-            <h2>Practice Responsible Stewardship</h2>
-            <p>We value stewardship and fiscal accountability and always strive to do more with less. We guard and conserve company resources as if they were our own because it makes good business sense at all times, not just during lean times.</p>
-        </div>
-    </div>
     <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <h2>Invest in an Exceptional Culture</h2>
-                <p>
-                    We aim to hire and retain talented people from diverse backgrounds who can create a high impact for our clients and internally within our company.
-                </p>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Commit to Delivery Excellence</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        We have a passion for consulting excellence.
+                        In all of our projects, we strive to first understand
+                        your needs and then deliver on our commitments 100 percent of the time.
+                    </div>
+                </div>
             </div>
-            <div class="col-md-3">
-                <h2>Ignite Passion for the Greater Good</h2>
-                <p>We take pride in our commitment to improving the world in which we live and actively preserving our environment for future generations. We are steadfast in our devotion to the communities we serve and actively promote employee involvement in community improvement projects.</p>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Embrace Integrity and Openness</a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        We value strong, positive relationships that are open and honest.
+                        This differentiates us and allows us to accomplish much more than we would be able to otherwise.
+                    </div>
+                </div>
             </div>
-            <div class="col-md-3">
-                <h2>Strive to Innovate</h2>
-                <p>We value passion, determination, perseverance, and innovation. We are inspired because we believe in what we are doing and where we are going. We believe in using innovation to remove obstacles and help you succeed.</p>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Practice Responsible Stewardship</a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        We value stewardship and fiscal accountability and always strive to do more with less.
+                        We guard and conserve company resources as if they were our own because it makes
+                        good business sense at all times, not just during lean times.
+                    </div>
+                </div>
             </div>
-            <div class="col-md-3">
-                <h2>Live a Balanced Life</h2>
-                <p>
-                    Our employees are our greatest asset. Because of that, we encourage our people to strive for balance in their life, and we monitor projects to ensure our employees have time for family, community and personal interests.
-                </p>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Invest in an Exceptional Culture</a>
+                    </h4>
+                </div>
+                <div id="collapse4" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        We aim to hire and retain talented people from
+                        diverse backgrounds who can create a high impact for
+                        our clients and internally within our company..
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="jumbotron">
-            <h1>Celebrate Each Other</h1>
-            <p class="lead">Centric is devoted to their core values and going above and beyond. Give special thanks to a fellow employee that has gone above and beyond when it comes to the core values.</p>
-            <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Ignite Passion for the Greater Good</a>
+                    </h4>
+                </div>
+                <div id="collapse5" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        We take pride in our commitment to improving the world in which we live and
+                        actively preserving our environment for future generations. We are steadfast in
+                        our devotion to the communities we serve and actively promote employee involvement in community improvement projects.
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Strive to Innovate</a>
+                    </h4>
+                </div>
+                <div id="collapse6" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        We value passion, determination, perseverance, and innovation. We are inspired
+                        because we believe in what we are doing and where we are going. We believe in using
+                        innovation to remove obstacles and help you succeed. 
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">Live a Balanced Life</a>
+                    </h4>
+                </div>
+                <div id="collapse7" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Our employees are our greatest asset. Because of that, we encourage our people to strive
+                        for balance in their life, and we monitor projects to ensure our employees have time for family,
+                        community and personal interests.
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+
+</body>
+</html>
+        <div class="jumbotron" style="background-color:rgb(72,51,98) ;">
+            <h1 style="color:white">Celebrate Each Other</h1>
+            <p class="lead" style="color:white">Centric is devoted to their core values and going above and beyond. Give special thanks to a fellow employee that has gone above and beyond when it comes to the core values.</p>
+            <p><a href="https://asp.net" class="btn btn-warning btn-lg">Learn more &raquo;</a></p>
+        </div>
+    
