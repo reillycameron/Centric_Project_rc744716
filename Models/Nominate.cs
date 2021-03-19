@@ -25,6 +25,5 @@ namespace Centric_Project_rc744716.Models
         [StringLength(250, ErrorMessage = "Please include details in 250 characters or less.")]
 
         public string valueComment { get; set; }
-
     }
 }
