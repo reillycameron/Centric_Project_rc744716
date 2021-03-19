@@ -12,7 +12,7 @@ namespace Centric_Project_rc744716.Models
 
         [Required(ErrorMessage = "You must select an employee to nominate.")]
         [Display(Name = "Employee Name")]
-        public int employeeID { get; set; }
+        public int profileID { get; set; }
         public virtual Profile profile { get; set; }
 
         public DateTime date { get; set; }

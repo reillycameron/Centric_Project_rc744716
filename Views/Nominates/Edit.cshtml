@@ -18,10 +18,10 @@
         @Html.HiddenFor(model => model.nominateID)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.employeeID, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.profileID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.employeeID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.employeeID, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.profileID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.profileID, "", new { @class = "text-danger" })
             </div>
         </div>
 

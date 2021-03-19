@@ -39,7 +39,7 @@ namespace Centric_Project_rc744716.Controllers
         // GET: Nominates/Create
         public ActionResult Create()
         {
-            ViewBag.employeeID = new SelectList(db.profile, "employeeID", "fullName");
+            ViewBag.profileID = new SelectList(db.profile, "profileID", "fullName");
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace Centric_Project_rc744716.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "nominateID,employeeID,date,valueRec,valueComment")] Nominate nominate)
+        public ActionResult Create([Bind(Include = "nominateID,profileID,date,valueRec,valueComment")] Nominate nominate)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace Centric_Project_rc744716.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.employeeID = new SelectList(db.profile, "employeeID", "fullName", nominate.employeeID);
+            ViewBag.profileID = new SelectList(db.profile, "profileID", "fullName", nominate.profileID);
             return View(nominate);
         }
 
@@ -74,7 +74,7 @@ namespace Centric_Project_rc744716.Controllers
                 return HttpNotFound();
             }
 
-            ViewBag.employeeID = new SelectList(db.profile, "employeeID", "fullName", nominate.employeeID);
+            ViewBag.profileID = new SelectList(db.profile, "profileID", "fullName", nominate.profileID);
             return View(nominate);
         }
 
@@ -83,7 +83,7 @@ namespace Centric_Project_rc744716.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "nominateID,employeeID,date,valueRec,valueComment")] Nominate nominate)
+        public ActionResult Edit([Bind(Include = "nominateID,profileID,date,valueRec,valueComment")] Nominate nominate)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +92,7 @@ namespace Centric_Project_rc744716.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.employeeID = new SelectList(db.profile, "employeeID", "fullName", nominate.employeeID);
+            ViewBag.profileID = new SelectList(db.profile, "profileID", "fullName", nominate.profileID);
             return View(nominate);
         }
 
