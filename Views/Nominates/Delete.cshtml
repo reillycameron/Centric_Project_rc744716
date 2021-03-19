@@ -1,0 +1,56 @@
+﻿@model Centric_Project_rc744716.Models.Nominate
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Nominate</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.employeeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employeeID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valueRec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valueRec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valueComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valueComment)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

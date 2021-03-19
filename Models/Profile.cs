@@ -36,6 +36,7 @@ namespace Centric_Project_rc744716.Models
         [Required]
         [StringLength(30, ErrorMessage = "Position must be 30 characters or less.")]
         public string position { get; set; }
-       
+        public ICollection<Nominate> nominate { get; set; }
+
     }
 }

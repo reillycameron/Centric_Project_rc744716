@@ -14,5 +14,7 @@ namespace Centric_Project_rc744716.DAL
 
         }
         public DbSet<Profile> profile { get; set; }
+
+        public System.Data.Entity.DbSet<Centric_Project_rc744716.Models.Nominate> Nominates { get; set; }
     }
 }

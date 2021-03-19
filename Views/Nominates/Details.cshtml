@@ -1,0 +1,50 @@
+﻿@model Centric_Project_rc744716.Models.Nominate
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Nominate</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.employeeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employeeID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valueRec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valueRec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valueComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valueComment)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.nominateID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

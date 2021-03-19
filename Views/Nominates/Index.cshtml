@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Centric_Project_rc744716.Models.Nominate>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.employeeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valueRec)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valueComment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.employeeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valueRec)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valueComment)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.nominateID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.nominateID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.nominateID })
+        </td>
+    </tr>
+}
+
+</table>

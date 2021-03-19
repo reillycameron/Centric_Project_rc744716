@@ -11,7 +11,7 @@ namespace Centric_Project_rc744716.Models
         public int nominateID { get; set; }
 
         [Required(ErrorMessage = "You must select an employee to nominate.")]
-
+        [Display(Name = "Employee Name")]
         public int employeeID { get; set; }
         public virtual Profile profile { get; set; }
 
@@ -25,5 +25,6 @@ namespace Centric_Project_rc744716.Models
         [StringLength(250, ErrorMessage = "Please include details in 250 characters or less.")]
 
         public string valueComment { get; set; }
+
     }
 }
