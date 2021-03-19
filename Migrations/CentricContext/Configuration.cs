@@ -12,6 +12,7 @@ namespace Centric_Project_rc744716.Migrations.CentricContext
             AutomaticMigrationsEnabled = true;
             MigrationsDirectory = @"Migrations\CentricContext";
             ContextKey = "Centric_Project_rc744716.DAL.CentricContext";
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Centric_Project_rc744716.DAL.CentricContext context)

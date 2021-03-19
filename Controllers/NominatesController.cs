@@ -16,10 +16,7 @@ namespace Centric_Project_rc744716.Controllers
         private CentricContext db = new CentricContext();
 
         // GET: Nominates
-        public ActionResult Index()
-        {
-            return View(db.Nominates.ToList());
-        }
+        public ActionResult Index() => View(db.Nominates.ToList());
 
         // GET: Nominates/Details/5
         public ActionResult Details(int? id)
@@ -40,6 +37,18 @@ namespace Centric_Project_rc744716.Controllers
         public ActionResult Create()
         {
             ViewBag.profileID = new SelectList(db.profile, "profileID", "fullName");
+            var valueRec = new SelectList(new[]
+                                        {
+                                              new {ID="1",Name="Commit to Delivery Excellence"},
+                                              new{ID="2",Name="Embrace Integrity and Openness"},
+                                              new{ID="3",Name="Practice Responsible Stewardship"},
+                                              new{ID="4", Name="Invest in an Exceptional Culture" },
+                                              new{ID="5", Name= "Ignite Passion for the Greater Good"},
+                                              new{ID="6", Name= "Strive to Innovate"},
+                                              new{ID="7", Name="Live a Balanced Life"}
+                                          },
+                          "ID", "Name", 1);
+            ViewData["valueRec"] = valueRec;
             return View();
         }
 
