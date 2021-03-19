@@ -21,7 +21,7 @@ namespace Centric_Project_rc744716.Models
 
         public string valueRec { get; set; }
 
-        [Required(Errormessage = "You must add a detail on how the employee has shown the value.")]
+        [Required(Errormessage = "You must add details on how the employee has shown the value.")]
         [StringLength(250, ErrorMessage = "Please include details in 250 characters or less.")]
 
         public string valueComment { get; set; }
