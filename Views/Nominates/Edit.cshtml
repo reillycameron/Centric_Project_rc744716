@@ -4,7 +4,7 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Edit Nomination Details</h2>
 
 
 @using (Html.BeginForm())
@@ -12,15 +12,14 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Nominate</h4>
-        <hr />
+        
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.nominateID)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.profileID, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.profileID, "profileID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.profileID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("profileID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.profileID, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -34,10 +33,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.valueRec, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.value, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.valueRec, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.valueRec, "", new { @class = "text-danger" })
+                @Html.EnumDropDownListFor(model => model.value, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.value, "", new { @class = "text-danger" })
             </div>
         </div>
 

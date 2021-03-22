@@ -1,24 +1,24 @@
 ﻿@model IEnumerable<Centric_Project_rc744716.Models.Nominate>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Nomination Feed";
 }
 
-<h2>Recognition Feed</h2>
+<h2>Nomination Feed</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nominate an Employee", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.profileID)
+            @Html.DisplayNameFor(model => model.profile.fullName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.date)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.valueRec)
+            @Html.DisplayNameFor(model => model.value)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.valueComment)
@@ -29,13 +29,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.profileID)
+            @Html.DisplayFor(modelItem => item.profile.fullName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.date)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.valueRec)
+            @Html.DisplayFor(modelItem => item.value)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.valueComment)

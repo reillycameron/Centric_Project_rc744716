@@ -1,21 +1,20 @@
 ﻿@model Centric_Project_rc744716.Models.Nominate
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "View Nomination Details";
 }
 
-<h2>Recogition Details</h2>
+<h2>View Nomination Details</h2>
 
 <div>
-    <h4>Nominate</h4>
-    <hr />
+   
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.profileID)
+            @Html.DisplayNameFor(model => model.profile.firstName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.profileID)
+            @Html.DisplayFor(model => model.profile.firstName)
         </dd>
 
         <dt>
@@ -27,11 +26,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.valueRec)
+            @Html.DisplayNameFor(model => model.value)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.valueRec)
+            @Html.DisplayFor(model => model.value)
         </dd>
 
         <dt>
