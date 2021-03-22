@@ -14,7 +14,7 @@ namespace Centric_Project_rc744716.Models
 
         [Required(ErrorMessage = "You must select an employee to nominate.")]
         [Display(Name = "Employee Name")]
-        public int profileID { get; set; }
+        public Guid profileID { get; set; }
         public virtual Profile profile { get; set; }
 
         [Display(Name = "Today's Date")]
@@ -26,13 +26,32 @@ namespace Centric_Project_rc744716.Models
 
         [Display(Name = "Value Recognized")]
         
-        public IEnumerable<SelectListItem> valueRec { get; set; }
+        public valueRec value { get; set; }
 
-        [Display(Name = "Brief Description of How Employee Reflected this Value")]
+        [Display(Name = "Brief Description of How Employee Reflected This Value")]
         [Required(ErrorMessage = "You must add details on how the employee has shown the value.")]
         [StringLength(250, ErrorMessage = "Please include details in 250 characters or less.")]
 
         public string valueComment { get; set; }
+
+        public enum valueRec
+        {
+            [Display(Name = "Commit to Delivery Excellence")]
+            Excellence = 1,
+            [Display(Name = "Embrace Integrity and Openness")]
+            Integrity = 2,
+            [Display(Name = "Practice Responsible Stewardship")]
+            Stewardship = 3,
+            [Display(Name = "Invest in an Exceptional Culture")]
+            Culture = 4,
+            [Display(Name = "Ignite Passion for the Greater Good")]
+            Passion = 5,
+            [Display(Name = "Strive to Innovate")]
+            Innovate = 6,
+            [Display(Name = "Live a Balanced Life")]
+            Balance = 7
+
+        }
 
     }
 }
