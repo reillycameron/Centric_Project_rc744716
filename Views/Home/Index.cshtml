@@ -9,10 +9,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+<br />
+<br />
 <body>
     
     <div class="container">
-        <div class="well well-lg" style="background-color:rgb(72,51,98);"><h3 style="color:white"> Our Values</h3></div>
+        <div class="well well-lg" style="background-color: rgb(44,28,89);"><h3 style="color:white"> Our Values</h3></div>
         <div class="panel-group" id="accordion">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -65,7 +67,7 @@
                     <div class="panel-body" style="font-weight:bold;background:rgba(250, 183, 34, 0.4)">
                         We aim to hire and retain talented people from
                         diverse backgrounds who can create a high impact for
-                        our clients and internally within our company..
+                        our clients and internally within our company.
                     </div>
                 </div>
             </div>
@@ -116,10 +118,12 @@
 
 </body>
 </html>
-<div class="jumbotron" style="background-color:rgb(72,51,98) ;">
+<div class="jumbotron" style=" background-color: rgb(44,28,89);">
     <h1 style="color:white">Celebrate Each Other</h1>
     <p class="lead" style="color:white">Centric is devoted to our core values and going above and beyond. Give special thanks to a fellow employee that has gone above and beyond when it comes to the core values.</p>
-    <p><a href="~Views/Nominates/Index.cshtml" class="btn btn-warning btn-lg">Give a Shout Out  &raquo;</a></p>
+    <p>
+        <li>@Html.ActionLink("Give a Shout Out", "Create", "Nominates", "Controller", new { @class = "btn-lg btn-warning" })</li>
+    </p>
 </div>
 
     
