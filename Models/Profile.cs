@@ -28,7 +28,7 @@ namespace Centric_Project_rc744716.Models
                 return lastName + ", " + firstName;
             }
     }
-        [Display(Name ="Office")]
+        [Display(Name ="Business Unit")]
         [Required]
         [StringLength(30, ErrorMessage = "Office must be 30 characters or less.")]
         public string office { get; set; }
