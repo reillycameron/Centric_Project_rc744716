@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Centric_Project_rc744716.Models.Nominate>
+
+@{
+    ViewBag.Title = "PersonalNominations";
+}
+
+<h2>PersonalNominations</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.profile.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.value)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valueComment)
+        </th>
+      
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.profile.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valueComment)
+        </td>
+    </tr>
+}
+
+</table>

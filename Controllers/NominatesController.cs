@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Centric_Project_rc744716.DAL;
 using Centric_Project_rc744716.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Centric_Project_rc744716.Controllers
 {
@@ -16,12 +17,20 @@ namespace Centric_Project_rc744716.Controllers
         private CentricContext db = new CentricContext();
 
         // GET: Nominates
+        [Authorize]
         public ActionResult Index()
         {
             var nominates = db.Nominates.Include(n => n.profile);
             return View(nominates.ToList());
         }
-
+        [Authorize]
+        public ActionResult PersonalNominations()
+        {
+            Guid newProfileID;
+            Guid.TryParse(User.Identity.GetUserId(), out newProfileID);
+            var nominates = db.Nominates.Where(n => n.profileID == newProfileID);
+            return View(nominates.ToList());
+        }
         // GET: Nominates/Details/5
         public ActionResult Details(int? id)
         {
@@ -38,6 +47,7 @@ namespace Centric_Project_rc744716.Controllers
         }
 
         // GET: Nominates/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.profileID = new SelectList(db.profile, "profileID", "fullName");
