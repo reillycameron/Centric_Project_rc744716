@@ -4,7 +4,9 @@
     ViewBag.Title = "Nomination Feed";
 }
 
-<h2>Nomination Feed</h2>
+<br />
+<br />
+<div class="well well-lg" style="background-color: rgb(44,28,89);"><h3 style="color:white"> Nominations Feed</h3></div>
 
 <p>
     @Html.ActionLink("Nominate an Employee", "Create")
@@ -26,26 +28,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.profile.fullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.value)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.valueComment)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.nominateID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.nominateID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.nominateID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.profile.fullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valueComment)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.nominateID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.nominateID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.nominateID })
+            </td>
+        </tr>
+    }
 
 </table>

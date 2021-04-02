@@ -66,6 +66,7 @@ namespace Centric_Project_rc744716.Controllers
         }
 
         // GET: Profiles/Edit/5
+        [Authorize]
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
@@ -97,6 +98,7 @@ namespace Centric_Project_rc744716.Controllers
         }
 
         // GET: Profiles/Delete/5
+        [Authorize]
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
