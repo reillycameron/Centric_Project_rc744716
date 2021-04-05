@@ -4,21 +4,24 @@
     ViewBag.Title = "PersonalNominations";
 }
 
-<h2>PersonalNominations</h2>
+<br />
+<br />
+<div class="well well-lg" style="background-color: rgb(44,28,89);"><h3 style="color:white"> My Nominations</h3> 
+    
+    <h4 style="font-style:italic;color:rgba(250, 183, 34, 1)">View the values that your teammates have recognized in you!</h4>
+</div>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+   
 </p>
 <table class="table">
     <tr>
+        
         <th>
-            @Html.DisplayNameFor(model => model.profile.firstName)
+            Date Nominated
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.value)
+            Value Recognized
         </th>
         <th>
             @Html.DisplayNameFor(model => model.valueComment)
@@ -27,20 +30,25 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.profile.firstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.value)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.valueComment)
-        </td>
-    </tr>
+<tr>
+    
+    <td>
+        @Html.DisplayFor(modelItem => item.date)
+        
+    </td>
+    <td>
+
+        @Html.DisplayFor(modelItem => item.value)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.valueComment)
+    </td>
+    <td>
+        @Html.ActionLink("Remove", "Delete", new { id = item.nominateID })
+        @Html.ActionLink("Details", "Details", new { id = item.nominateID })
+    </td>
+
+</tr>
 }
 
 </table>
