@@ -13,16 +13,24 @@
 </p>
 <table class="table">
     <tr>
-        <th>
+        <th class="col-sm-2">
+        
             @Html.DisplayNameFor(model => model.profile.fullName)
         </th>
-        <th>
+        <th class="col-sm-2">
+        
+            @Html.DisplayNameFor(model => model.Giver.fullName)
+        </th>
+        <th class="col-sm-1">
+            
             @Html.DisplayNameFor(model => model.date)
         </th>
-        <th>
+        <th class="col-sm-1">
+            
             @Html.DisplayNameFor(model => model.value)
         </th>
-        <th>
+        <th class="col-sm-3">
+            
             @Html.DisplayNameFor(model => model.valueComment)
         </th>
         <th></th>
@@ -30,25 +38,28 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.profile.fullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.value)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.valueComment)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.nominateID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.nominateID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.nominateID })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.profile.fullName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Giver.fullName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.date)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.value)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.valueComment)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.nominateID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.nominateID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.nominateID })
+    </td>
+</tr>
     }
 
 </table>
