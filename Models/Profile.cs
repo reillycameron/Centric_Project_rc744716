@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -36,7 +37,10 @@ namespace Centric_Project_rc744716.Models
         [Required]
         [StringLength(30, ErrorMessage = "Position must be 30 characters or less.")]
         public string position { get; set; }
+        [ForeignKey("profileID")]
         public ICollection<Nominate> nominate { get; set; }
+        [ForeignKey("nominator")]
+        public ICollection<Nominate> nominator { get; set; }
 
     }
 }

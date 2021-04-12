@@ -62,7 +62,11 @@ namespace Centric_Project_rc744716.Controllers
         public ActionResult Create([Bind(Include = "nominateID,profileID,date,value,valueComment")] Nominate nominate)
         {
             if (ModelState.IsValid)
+
             {
+                Guid newProfileID;
+                Guid.TryParse(User.Identity.GetUserId(), out newProfileID);
+                nominate.nominator = newProfileID;
                 db.Nominates.Add(nominate);
                 db.SaveChanges();
                 return RedirectToAction("Index");

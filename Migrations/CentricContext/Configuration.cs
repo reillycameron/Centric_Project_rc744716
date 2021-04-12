@@ -3,6 +3,7 @@ namespace Centric_Project_rc744716.Migrations.CentricContext
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
+    using System.Data.Entity.ModelConfiguration.Conventions;
     using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Centric_Project_rc744716.DAL.CentricContext>
@@ -14,6 +15,7 @@ namespace Centric_Project_rc744716.Migrations.CentricContext
             ContextKey = "Centric_Project_rc744716.DAL.CentricContext";
             AutomaticMigrationDataLossAllowed = true;
         }
+       
 
         protected override void Seed(Centric_Project_rc744716.DAL.CentricContext context)
         {

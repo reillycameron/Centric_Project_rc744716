@@ -15,7 +15,12 @@ namespace Centric_Project_rc744716.Models
         [Required(ErrorMessage = "You must select an employee to nominate.")]
         [Display(Name = "Employee Name")]
         public Guid profileID { get; set; }
+        [ForeignKey("profileID")]
         public virtual Profile profile { get; set; }
+
+        public Guid nominator { get; set; }
+        [ForeignKey("nominator")]
+        public virtual Profile Giver { get; set; }
 
         [Display(Name = "Today's Date")]
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
