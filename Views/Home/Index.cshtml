@@ -6,6 +6,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -13,7 +14,10 @@
 <br />
 <body>
         <div class="container">
-            <div class="well well-lg" style="background-image: url('https://centricconsulting.com/wp-content/uploads/2020/08/Our_story_The-idea-centric-1680x750.jpg'); background-size: 100% 100%; width: 1140px; height: 450px;">
+            <div class="well well-lg" style="background-image: url('https://centricconsulting.com/wp-content/uploads/2020/08/Our_story_The-idea-centric-1680x750.jpg');
+        border-color: #ffb612;border-width:medium; background-size: 100% 100%;
+        width: 1140px;
+        height: 450px;">
                 <h1 style="color: white">Our Values</h1>
             </div>
         <style>
@@ -26,13 +30,13 @@
                 }
 
                 /* Style the tab */
-                .tab {
-                    float: left;
-                    border: 1px solid #ccc;
-                    background-color: #f1f1f1;
-                    width: 30%;
-                    height: 500px;
-                }
+            .tab {
+                float: left;
+                border: 1px solid #ffb612;
+                background-color: #f1f1f1;
+                width: 30%;
+                height: 500px;
+            }
 
                     /* Style the buttons inside the tab */
                     .tab button {
@@ -80,6 +84,46 @@
                     clear: both;
                     display: table;
                 }
+            .fa {
+                padding: 20px;
+                font-size: 30px;
+                width: 70px;
+                text-align: center;
+                text-decoration: none;
+                margin: 5px 2px;
+                border-radius: 50%;
+            }
+
+                /* Add a hover effect if you want */
+                .fa:hover {
+                    opacity: 0.7;
+                }
+
+            /* Set a specific color for each brand */
+
+            /* Facebook */
+            .fa-facebook {
+                background: #3B5998;
+                color: white;
+            }
+
+            /* Twitter */
+            .fa-twitter {
+                background: #55ACEE;
+                color: white;
+            }
+            .fa-instagram {
+                background: #125688;
+                color: white;
+            }
+            .fa-linkedin {
+                background: #007bb5;
+                color: white;
+            }
+            .fa-youtube {
+                background: #bb0000;
+                color: white;
+            }
             </style>
             </head>
         <body>
@@ -189,14 +233,26 @@
 </html>
 </br>
 </br>
-<div class="jumbotron" style=" background-color: rgb(44,28,89);">
+<div class="jumbotron" style="background-color: rgb(44,28,89);">
     <h1 style="color:white">Celebrate Each Other</h1>
     <p class="lead" style="color:white">Centric is devoted to our core values and going above and beyond. Give special thanks to a fellow employee that has gone above and beyond when it comes to the core values.</p>
     <p>
-        @Html.ActionLink("Give a Shout Out", "Create", "Nominates", "Controller", new { @class = "btn-lg btn-warning", style= "background-color: #ffb612" })
+        @Html.ActionLink("Give a Shout Out »", "Create", "Nominates", "Controller", new { @class = "btn-lg btn-warning", style = "background-color: #ffb612" })
     </p>
 </div>
-<div class="jumbotron" style="background-image: url('https://centricconsulting.com/wp-content/uploads/2020/01/SummerMeeting_2019_AllCentric_Team_Group_Photo_1-1680x750.jpg'); background-size: 100% 100%; height:400px;">
 
+<div class="jumbotron" style="background-image: url('https://centricconsulting.com/wp-content/uploads/2020/01/SummerMeeting_2019_AllCentric_Team_Group_Photo_1-1680x750.jpg');
+        background-size: 100% 100%;
+        height: 400px;"></div>
+    <div class="container">
+     <p>
+     <h3 style="font-weight:bold">Follow Us on Social Media</h3>
+    <a href="https://www.facebook.com/CentricConsultingNational" class="fa fa-facebook"></a>
+    <a href="https://twitter.com/centric" class="fa fa-twitter"></a>
+    <a href="https://www.linkedin.com/company/centric-consulting/" class="fa fa-linkedin"></a>
+    <a href="https://www.instagram.com/centricconsulting/" class="fa fa-instagram"></a>
+    <a href="https://www.youtube.com/channel/UCFmtoIKH1ijwpGpiJBxl4dw" class="fa fa-youtube"></a>
+     </p>
+        </div>
 </div>
-    
+
