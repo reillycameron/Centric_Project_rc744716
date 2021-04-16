@@ -28,8 +28,11 @@
         </th>
       
     </tr>
-
-@foreach (var item in Model) {
+    @{
+        Guid ID;
+        }
+@foreach (var item in Model)
+{
 <tr>
     
     <td>
@@ -44,11 +47,19 @@
         @Html.DisplayFor(modelItem => item.valueComment)
     </td>
     <td>
-        @Html.ActionLink("Remove", "Delete", new { id = item.nominateID })
         @Html.ActionLink("Details", "Details", new { id = item.nominateID })
     </td>
 
 </tr>
+    @{ 
+         ID = item.profileID;
+    }
 }
 
 </table>
+@{ 
+    Centric_Project_rc744716.DAL.CentricContext db = new Centric_Project_rc744716.DAL.CentricContext();
+    var nominations = db.Nominates.Where(N => N.nominator == ID);
+
+
+}

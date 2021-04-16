@@ -47,12 +47,11 @@
     <table class="table">
         <tr>
             <th class="col-sm-2">
-
-                @Html.DisplayNameFor(model => model.profile.fullName)
+                Nominee
             </th>
             <th class="col-sm-2">
 
-                @Html.DisplayNameFor(model => model.Giver.fullName)
+    Nominated by
             </th>
             <th class="col-sm-1">
 
@@ -88,9 +87,7 @@
                     @Html.DisplayFor(modelItem => item.valueComment)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.nominateID }) |
                     @Html.ActionLink("Details", "Details", new { id = item.nominateID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.nominateID })
                 </td>
             </tr>
         }
