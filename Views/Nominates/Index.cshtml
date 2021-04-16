@@ -6,60 +6,90 @@
 
 <br />
 <br />
-<div class="well well-lg" style="background-color: rgb(44,28,89);"><h3 style="color:white"> Nominations Feed</h3></div>
+<div class="container">
+    <div class="well well-lg" style="        background-image: url('https://centricconsulting.com/wp-content/uploads/2020/09/Homepage-Hero-Placeholder-Image_NEW-768x436.jpg');
+        border-color: #ffb612;
+        border-width: medium;
+        background-size: 100% 100%;
+        width: 1140px;
+        height: 400px;"><h1 style="color:white">Nomination Feed</h1></div>
+    
+    @Html.ActionLink("Nominate an Employee", "Create", "Nominates", new { @class = "btn btn-default btn-lg", style = "color:white; background-color:rgb(44,28,89)" })
 
-<p>
-    @Html.ActionLink("Nominate an Employee", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th class="col-sm-2">
-        
-            @Html.DisplayNameFor(model => model.profile.fullName)
-        </th>
-        <th class="col-sm-2">
-        
-            @Html.DisplayNameFor(model => model.Giver.fullName)
-        </th>
-        <th class="col-sm-1">
-            
-            @Html.DisplayNameFor(model => model.date)
-        </th>
-        <th class="col-sm-1">
-            
-            @Html.DisplayNameFor(model => model.value)
-        </th>
-        <th class="col-sm-3">
-            
-            @Html.DisplayNameFor(model => model.valueComment)
-        </th>
-        <th></th>
-    </tr>
+    <button type="button" class="btn btn-info btn-lg" style="border-color: #ffb612; background-color:white; color:#ffb612; float:right;" data-toggle="modal" data-target="#myModal">Values Recongnized</button>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" style="color: #ffb612">Our Values</h4>
+                </div>
+                <div class="modal-body" style="background-color: rgb(44,28,89">
+                    <p style="color: white">Commit to Delivery <span style="color: #ffb612">Excellence</span></p>
+                    <p style="color: white">Embrace <span style="color: #ffb612">Integrity</span> and Openness</p>
+                    <p style="color: white">Practice Responsible <span style="color: #ffb612">Stewardship</span></p>
+                    <p style="color: white">Invest in an Exceptional <span style="color: #ffb612">Culture</span></p>
+                    <p style="color: white">Ignite <span style="color: #ffb612">Passion</span> for the Greater Good</p>
+                    <p style="color: white">Strive to <span style="color: #ffb612">Innovate</span></p>
+                    <p style="color: white">Live a <span style="color: #ffb612">Balanced</span> Life</p>
 
-    @foreach (var item in Model)
-    {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.profile.fullName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Giver.fullName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.date)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.value)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.valueComment)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.nominateID }) |
-        @Html.ActionLink("Details", "Details", new { id = item.nominateID }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.nominateID })
-    </td>
-</tr>
-    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
 
-</table>
+        </div>
+    </div>
+    </br>
+    </br>
+
+    <table class="table">
+        <tr>
+            <th class="col-sm-2">
+                Nominee
+            </th>
+            <th class="col-sm-2">
+
+    Nominated by
+            </th>
+            <th class="col-sm-1">
+
+                @Html.DisplayNameFor(model => model.date)
+            </th>
+            <th class="col-sm-1">
+
+                @Html.DisplayNameFor(model => model.value)
+            </th>
+            <th class="col-sm-3">
+
+                @Html.DisplayNameFor(model => model.valueComment)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.profile.fullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Giver.fullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.value)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.valueComment)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.nominateID }) |
+                </td>
+            </tr>
+        }
+
+    </table>
