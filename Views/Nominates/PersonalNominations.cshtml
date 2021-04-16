@@ -12,7 +12,9 @@
 </div>
 
 <p>
-   
+    {
+        Guid ID;
+    }
 </p>
 <table class="table">
     <tr>
@@ -28,9 +30,7 @@
         </th>
       
     </tr>
-    @{
-        Guid ID;
-        }
+   
 @foreach (var item in Model)
 {
 <tr>
@@ -51,7 +51,7 @@
     </td>
 
 </tr>
-    @{ 
+    { 
          ID = item.profileID;
     }
 }
@@ -60,6 +60,9 @@
 @{ 
     Centric_Project_rc744716.DAL.CentricContext db = new Centric_Project_rc744716.DAL.CentricContext();
     var nominations = db.Nominates.Where(N => N.nominator == ID);
-
+    if (nominations != null)
+    {
+        Html.RenderPartial("_nominations", nominations);
+    }
 
 }
