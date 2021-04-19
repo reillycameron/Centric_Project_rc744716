@@ -6,15 +6,22 @@
 
 <br />
 <br />
-<div class="well well-lg" style="background-color: rgb(44,28,89);"><h3 style="color:white"> Nominations Given</h3> 
-    
-    <h4 style="font-style:italic;color:rgba(250, 183, 34, 1)">View the past recognitions you have given to your teammates!</h4>
+<div class="well well-lg" style="background-image: url('https://centricconsulting.com/wp-content/uploads/2021/03/CIO-Succession-Plan-Header-1024x253.jpg'); background-size: 100% 100%; width: 1150px; height: 300px; "><h1 style=" color: white;
+        text-align: right;"
+        > Given Nominations </h1></div>    
+<div>    
+<h4 style="font-style: italic;color: rgb(44,28,89)"
+    >View the past recognitions you have awarded to your teammates!</h4>
 </div>
+
 
 
 <table class="table">
     <tr>
-        
+
+        <th>
+            Recipient 
+        </th>
         <th>
             Date Nominated
         </th>
@@ -22,15 +29,17 @@
             Value Recognized
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.valueComment)
+            Reason for Recognition
         </th>
-      
+
     </tr>
    
 @foreach (var item in Model)
 {
 <tr>
-    
+    <td>
+        @Html.DisplayFor(modelItem => item.profile.fullName)
+    </td>
     <td>
         @Html.DisplayFor(modelItem => item.date)
         
