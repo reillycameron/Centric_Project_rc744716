@@ -26,7 +26,14 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Centric Family", "Index", "Profiles")</li>
                     <li>@Html.ActionLink("Nominate", "Index", "Nominates")</li>
-                    <li>@Html.ActionLink("My Nominations", "PersonalNominations", "Nominates")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">My Feed <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Nominations Given", "GivenNominations", "Nominates")</li>
+                            <li>@Html.ActionLink("Nominations Received", "PersonalNominations", "Nominates")</li>
+                        </ul>
+                    </li>
+                    
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

@@ -6,17 +6,19 @@
 
 <br />
 <br />
-<div class="well well-lg" style="background-color: rgb(44,28,89);"><h3 style="color:white"> My Nominations</h3> 
-    
-    <h4 style="font-style:italic;color:rgba(250, 183, 34, 1)">View the values that your teammates have recognized in you!</h4>
+<div class="well well-lg" style="background-image: url('https://centricconsulting.com/wp-content/uploads/2020/07/BA_WebsiteImages_InteriorPage_Tech-1024x253.png'); background-size: 100% 100%; width: 1150px; height: 200px; "><h1 style="color:white"> Received Nominations </h1></div>
+
+<div>
+<h4 style="font-style: italic;color: rgb(44,28,89)"
+>View the values that your teammates have recognized in you!</h4>
 </div>
 
-<p>
-   
-</p>
+
 <table class="table">
     <tr>
-        
+        <th>
+            Nominated By
+        </th>
         <th>
             Date Nominated
         </th>
@@ -24,42 +26,38 @@
             Value Recognized
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.valueComment)
+            Reason for Recognition
         </th>
-      
+
     </tr>
-    @{
-        Guid ID;
-        }
-@foreach (var item in Model)
-{
-<tr>
-    
-    <td>
-        @Html.DisplayFor(modelItem => item.date)
-        
-    </td>
-    <td>
 
-        @Html.DisplayFor(modelItem => item.value)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.valueComment)
-    </td>
-    <td>
-        @Html.ActionLink("Details", "Details", new { id = item.nominateID })
-    </td>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Giver.fullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
 
-</tr>
-    @{ 
-         ID = item.profileID;
+            </td>
+            <td>
+
+                @Html.DisplayFor(modelItem => item.value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valueComment)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.nominateID })
+            </td>
+
+        </tr>
+
     }
-}
 
 </table>
-@{ 
-    Centric_Project_rc744716.DAL.CentricContext db = new Centric_Project_rc744716.DAL.CentricContext();
-    var nominations = db.Nominates.Where(N => N.nominator == ID);
+@{
 
 
 }

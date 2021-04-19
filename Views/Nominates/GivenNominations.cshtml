@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Centric_Project_rc744716.Models.Nominate>
+
+@{
+    ViewBag.Title = "GivenNominations";
+}
+
+<br />
+<br />
+<div class="well well-lg" style="background-image: url('https://centricconsulting.com/wp-content/uploads/2021/03/CIO-Succession-Plan-Header-1024x253.jpg'); background-size: 100% 100%; width: 1150px; height: 300px; "><h1 style=" color: white;
+        text-align: right;"
+        > Given Nominations </h1></div>    
+<div>    
+<h4 style="font-style: italic;color: rgb(44,28,89)"
+    >View the past recognitions you have awarded to your teammates!</h4>
+</div>
+
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            Recipient 
+        </th>
+        <th>
+            Date Nominated
+        </th>
+        <th>
+            Value Recognized
+        </th>
+        <th>
+            Reason for Recognition
+        </th>
+
+    </tr>
+   
+@foreach (var item in Model)
+{
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.profile.fullName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.date)
+        
+    </td>
+    <td>
+
+        @Html.DisplayFor(modelItem => item.value)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.valueComment)
+    </td>
+    <td>
+        @Html.ActionLink("Details", "Details", new { id = item.nominateID })
+    </td>
+
+</tr>
+    
+}
+
+</table>
+@{ 
+    
+
+}
