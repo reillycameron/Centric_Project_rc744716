@@ -31,6 +31,15 @@ namespace Centric_Project_rc744716.Controllers
             var nominates = db.Nominates.Where(n => n.profileID == newProfileID);
             return View(nominates.ToList());
         }
+
+        [Authorize]
+        public ActionResult GivenNominations()
+        {
+            Guid newProfileID;
+            Guid.TryParse(User.Identity.GetUserId(), out newProfileID);
+            var nominates = db.Nominates.Where(n => n.nominator == newProfileID);
+            return View(nominates.ToList());
+        }
         // GET: Nominates/Details/5
         public ActionResult Details(int? id)
         {
