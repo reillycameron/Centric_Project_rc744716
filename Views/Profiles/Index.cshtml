@@ -7,7 +7,18 @@
 <br />
 <br />
 <div class="well well-lg" style="background-image: url('https://centricconsulting.com/wp-content/uploads/2020/07/BA_WebsiteImages_InteriorPage_About_2.png'); background-size: 100% 100%; width: 1150px; height: 200px; "><h1 style="color:white"> Centric Family </h1></div>
+@{
+    <div class="topnav">
+        <div class="search-container">
+            
+            <form action="/action_page.php">
+               Search for an employee: <input type="text" placeholder="Search.." name="search">
+                <button type="submit" style = "color:white; background-color:rgb(44,28,89)" >Submit</button>
+            </form>
+        </div>
+    </div>
 
+}
 <p>
     @*@Html.ActionLink("Create Profile", "Create")*@
 </p>

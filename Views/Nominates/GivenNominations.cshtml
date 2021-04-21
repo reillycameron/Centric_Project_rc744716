@@ -16,11 +16,11 @@
 
 
 
-<table class="table">
+<table class="table table-striped table-hover">
     <tr>
 
         <th>
-            Recipient 
+            Recipient
         </th>
         <th>
             Date Nominated
@@ -33,31 +33,31 @@
         </th>
 
     </tr>
-   
-@foreach (var item in Model)
-{
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.profile.fullName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.date)
-        
-    </td>
-    <td>
 
-        @Html.DisplayFor(modelItem => item.value)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.valueComment)
-    </td>
-    <td>
-        @Html.ActionLink("Details", "Details", new { id = item.nominateID })
-    </td>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.profile.fullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
 
-</tr>
-    
-}
+            </td>
+            <td>
+
+                @Html.DisplayFor(modelItem => item.value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valueComment)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.nominateID })
+            </td>
+
+        </tr>
+
+    }
 
 </table>
 @{ 
