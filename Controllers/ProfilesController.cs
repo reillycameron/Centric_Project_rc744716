@@ -17,9 +17,9 @@ namespace Centric_Project_rc744716.Controllers
         private CentricContext db = new CentricContext();
 
         // GET: Profiles
-        public ActionResult Index()
+        public ActionResult Index(string searching)
         {
-            return View(db.profile.ToList());
+            return View(db.profile.Where(x=>x.lastName.Contains(searching) || x.firstName.Contains(searching) || searching == null).ToList());
         }
 
         // GET: Profiles/Details/5
