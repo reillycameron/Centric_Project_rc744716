@@ -21,15 +21,35 @@ namespace Centric_Project_rc744716.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var nominates = db.Nominates.Include(n => n.profile);
+            var nominates = db.Nominates.Include(n => n.profile).OrderByDescending(a=>a.date);
             return View(nominates.ToList());
+            var nominatesList = nominates.ToList();
+            ViewBag.nominates = nominatesList;
+            
+            var totalCount = nominatesList.Count();
+            var excCount = nominatesList.Where(r => r.value == Nominate.valueRec.Excellence).Count();
+            var intCount = nominatesList.Where(r => r.value == Nominate.valueRec.Integrity).Count();
+            var steCount = nominatesList.Where(r => r.value == Nominate.valueRec.Stewardship).Count();
+            var culCount = nominatesList.Where(r => r.value == Nominate.valueRec.Culture).Count();
+            var pasCount = nominatesList.Where(r => r.value == Nominate.valueRec.Passion).Count();
+            var innCount = nominatesList.Where(r => r.value == Nominate.valueRec.Innovate).Count();
+            var balCount = nominatesList.Where(r => r.value == Nominate.valueRec.Balance).Count();
+            ViewBag.total = totalCount;
+            ViewBag.excellence = excCount;
+            ViewBag.integrity = intCount;
+            ViewBag.stewardship = steCount;
+            ViewBag.culture = culCount;
+            ViewBag.passion = pasCount;
+            ViewBag.innovate = innCount;
+            ViewBag.balance = balCount;
+
         }
         [Authorize]
         public ActionResult PersonalNominations()
         {
             Guid newProfileID;
             Guid.TryParse(User.Identity.GetUserId(), out newProfileID);
-            var nominates = db.Nominates.Where(n => n.profileID == newProfileID);
+            var nominates = db.Nominates.Where(n => n.profileID == newProfileID).OrderByDescending(a => a.date);
             return View(nominates.ToList());
         }
 
@@ -38,7 +58,7 @@ namespace Centric_Project_rc744716.Controllers
         {
             Guid newProfileID;
             Guid.TryParse(User.Identity.GetUserId(), out newProfileID);
-            var nominates = db.Nominates.Where(n => n.nominator == newProfileID);
+            var nominates = db.Nominates.Where(n => n.nominator == newProfileID).OrderByDescending(a => a.date);
             return View(nominates.ToList());
         }
         // GET: Nominates/Details/5
