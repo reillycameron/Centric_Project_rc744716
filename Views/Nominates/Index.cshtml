@@ -13,6 +13,26 @@
         background-size: 100% 100%;
         width: 1140px;
         height: 400px;"><h1 style="color:white">Nomination Feed</h1></div>
+
+@{ 
+    var total = ViewBag.total;
+    var excellence = ViewBag.excellence;
+    var integrity = ViewBag.integrity;
+    var stewardship = ViewBag.stewardship;
+    var culture = ViewBag.culture;
+    var passion = ViewBag.passion;
+    var innovate = ViewBag.innovate;
+    var balance = ViewBag.balance;
+
+    <h2>Total Nominations Awarded: @total  </h2>
+    <h3>Excellence: @excellence</h3>
+    <h3>Integrity: @integrity</h3>
+    <h3>Stewardship: @stewardship</h3>
+    <h3>Culture: @culture</h3>
+    <h3>Passion: @passion</h3>
+    <h3>Innovate: @innovate</h3>
+    <h3>Balance: @balance</h3>
+}
     
     @Html.ActionLink("Nominate an Employee", "Create", "Nominates", new { @class = "btn btn-default btn-lg", style = "color:white; background-color:rgb(44,28,89)" })
 
