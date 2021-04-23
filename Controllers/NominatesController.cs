@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using Centric_Project_rc744716.DAL;
 using Centric_Project_rc744716.Models;
 using Microsoft.AspNet.Identity;
+using static Centric_Project_rc744716.Models.Nominate;
 
 namespace Centric_Project_rc744716.Controllers
 {
@@ -152,5 +153,7 @@ namespace Centric_Project_rc744716.Controllers
             }
             base.Dispose(disposing);
         }
+       
     }
+
 }

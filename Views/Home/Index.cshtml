@@ -10,129 +10,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<br />
-<br />
+
 <body>
-        <div class="container">
-            <div class="well well-lg" style="background-image: url('https://centricconsulting.com/wp-content/uploads/2020/08/Our_story_The-idea-centric-1680x750.jpg');
+    </br>
+    </br>
+    <div class="container">
+        <div class="well well-lg" style="background-image: url('https://centricconsulting.com/wp-content/uploads/2020/08/Our_story_The-idea-centric-1680x750.jpg');
         border-color: #ffb612;border-width:medium; background-size: 100% 100%;
         width: 1140px;
         height: 450px;">
-                <h1 style="color: white">Our Values</h1>
-            </div>
-        <style>
-                * {
-                    box-sizing: border-box
-                }
+            <h1 style="color:white">Welcome Centric Family</h1>
+        </div>
+    </div>
 
-                body {
-                    font-family: "Lato", sans-serif;
-                }
-
-                /* Style the tab */
-            .tab {
-                float: left;
-                border: 1px solid #ffb612;
-                background-color: #f1f1f1;
-                width: 30%;
-                height: 500px;
-            }
-
-                    /* Style the buttons inside the tab */
-                    .tab button {
-                        color: rgb(44,28,89);
-                        display: block;
-                        background-color: inherit;
-                        color: black;
-                        padding: 22px 16px;
-                        width: 100%;
-                        border: none;
-                        outline: none;
-                        text-align: left;
-                        cursor: pointer;
-                        font-size: 17px;
-                    }
-
-                        /* Change background color of buttons on hover */
-                        .tab button:hover {
-                            background-color: #ffb612;
-                        }
-
-                        /* Create an active/current "tab button" class */
-                        .tab button.active {
-                            background-color: #ffb612;
-                        }
-
-                /* Style the tab content */
-            .tabcontent {
-                float: left;
-                padding: 0px 12px;
-                border: 1px solid #ffb612;
-                width: 70%;
-                border-left: none;
-                height: 500px;
-                display: none;
-                text-align:center;
-            }
-            h3 {
-                color: #ffb612;
-            }
-            }
-                /* Clear floats after the tab */
-                .clearfix::after {
-                    content: "";
-                    clear: both;
-                    display: table;
-                }
-            .fa {
-                padding: 20px;
-                font-size: 30px;
-                width: 70px;
-                text-align: center;
-                text-decoration: none;
-                margin: 5px 2px;
-                border-radius: 50%;
-            }
-
-                /* Add a hover effect if you want */
-                .fa:hover {
-                    opacity: 0.7;
-                }
-
-            /* Set a specific color for each brand */
-
-            /* Facebook */
-            .fa-facebook {
-                background: #3B5998;
-                color: white;
-            }
-
-            /* Twitter */
-            .fa-twitter {
-                background: #55ACEE;
-                color: white;
-            }
-            .fa-instagram {
-                background: #125688;
-                color: white;
-            }
-            .fa-linkedin {
-                background: #007bb5;
-                color: white;
-            }
-            .fa-youtube {
-                background: #bb0000;
-                color: white;
-            }
-            </style>
-            </head>
-        <body>
-            <div>
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <h2 style="color: #ffb612">Our Values</h2>
                 <h4 style="font-style: italic;color: rgb(44,28,89)">
                     Mouse over buttons for more information:
                 </h4>
             </div>
-           
+
 
             <div class="tab">
                 <button class="tablinks" onmouseover="openCity(event, 'Excellence')">Commit to Delivery Excellence</button>
@@ -217,49 +116,245 @@
             </div>
 
             <div class="clearfix"></div>
+        </div>
 
-            <script>
-                function openCity(evt, cityName) {
-                    var i, tabcontent, tablinks;
-                    tabcontent = document.getElementsByClassName("tabcontent");
-                    for (i = 0; i < tabcontent.length; i++) {
-                        tabcontent[i].style.display = "none";
-                    }
-                    tablinks = document.getElementsByClassName("tablinks");
-                    for (i = 0; i < tablinks.length; i++) {
-                        tablinks[i].className = tablinks[i].className.replace(" active", "");
-                    }
-                    document.getElementById(cityName).style.display = "block";
-                    evt.currentTarget.className += " active";
+        <div class="rightcolumn">
+            <div class="card">
+                <h2>Nomination Counter</h2>
+           
+              
+
+            </div>
+            <div class="card">
+                <h3>Popular Post</h3>
+                <div class="fakeimg">Image</div><br>
+                <div class="fakeimg">Image</div><br>
+                <div class="fakeimg">Image</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="jumbotron" style="background-color: rgb(44,28,89);">
+            <h1 style="color:white">Celebrate Each Other</h1>
+            <p class="lead" style="color:white">Centric is devoted to our core values and going above and beyond. Give special thanks to a fellow employee that has gone above and beyond when it comes to the core values.</p>
+            <p>
+                @Html.ActionLink("Give a Shout Out »", "Create", "Nominates", "Controller", new { @class = "btn-lg btn-warning", style = "background-color: #ffb612" })
+            </p>
+        </div>
+    </div>
+
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        /* Style the tab */
+        .tab {
+            float: left;
+            border: 1px solid #ffb612;
+            background-color: #f1f1f1;
+            width: 40%;
+            height: 550px;
+        }
+
+            /* Style the buttons inside the tab */
+            .tab button {
+                color: rgb(44,28,89);
+                display: block;
+                background-color: inherit;
+                color: black;
+                padding: 22px 16px;
+                width: 100%;
+                border: none;
+                outline: none;
+                text-align: left;
+                cursor: pointer;
+                font-size: 17px;
+            }
+
+                /* Change background color of buttons on hover */
+                .tab button:hover {
+                    background-color: #ffb612;
                 }
-            </script>
+
+                /* Create an active/current "tab button" class */
+                .tab button.active {
+                    background-color: #ffb612;
+                }
+
+        /* Style the tab content */
+        .tabcontent {
+            float: left;
+            padding: 0px 12px;
+            border: 1px solid #ffb612;
+            background-color: white;
+            width: 60%;
+            border-left: none;
+            height: 550px;
+            display: none;
+            text-align: center;
+        }
+
+        h3 {
+            color: #ffb612;
+        }
+        h1{
+            font-size:50px;
+            text-align:left;
+            text-align-last:unset;
+        }
+       
+        /* Clear floats after the tab */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 70px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 50%;
+        }
+
+            /* Add a hover effect if you want */
+            .fa:hover {
+                opacity: 0.7;
+            }
+
+        /* Set a specific color for each brand */
+
+        /* Facebook */
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        /* Twitter */
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .fa-instagram {
+            background: #125688;
+            color: white;
+        }
+
+        .fa-linkedin {
+            background: #007bb5;
+            color: white;
+        }
+
+        .fa-youtube {
+            background: #bb0000;
+            color: white;
+        }
+
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background: #f1f1f1;
+        }
+
+        /* Header/Blog Title */
+        .header {
+            padding: 30px;
+            font-size: 40px;
+            text-align: center;
+            background: white;
+        }
+
+        /* Create two unequal columns that floats next to each other */
+        /* Left column */
+        .leftcolumn {
+            float: left;
+            width: 75%;
+            padding-left: 20px;
+        }
+
+        /* Right column */
+        .rightcolumn {
+            float: left;
+            width: 25%;
+            padding-left: 20px;
+        }
+
+        /* Fake image */
+        .fakeimg {
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* Add a card effect for articles */
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Footer */
+        .footer {
+            
+            text-align: center;
+            background: #ddd;
+            margin-top: 15px;
+        }
+    </style>
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+   
+
+    </script>
 
 
 
-        </body>
+</body>
 </html>
-</br>
-</br>
-<div class="jumbotron" style="background-color: rgb(44,28,89);">
-    <h1 style="color:white">Celebrate Each Other</h1>
-    <p class="lead" style="color:white">Centric is devoted to our core values and going above and beyond. Give special thanks to a fellow employee that has gone above and beyond when it comes to the core values.</p>
-    <p>
-        @Html.ActionLink("Give a Shout Out »", "Create", "Nominates", "Controller", new { @class = "btn-lg btn-warning", style = "background-color: #ffb612" })
-    </p>
-</div>
-
 <div class="jumbotron" style="background-image: url('https://centricconsulting.com/wp-content/uploads/2020/01/SummerMeeting_2019_AllCentric_Team_Group_Photo_1-1680x750.jpg');
         background-size: 100% 100%;
-        height: 400px;"></div>
-    <div class="container">
-     <p>
-     <h3 style="font-weight:bold">Follow Us on Social Media</h3>
-    <a href="https://www.facebook.com/CentricConsultingNational" class="fa fa-facebook"></a>
-    <a href="https://twitter.com/centric" class="fa fa-twitter"></a>
-    <a href="https://www.linkedin.com/company/centric-consulting/" class="fa fa-linkedin"></a>
-    <a href="https://www.instagram.com/centricconsulting/" class="fa fa-instagram"></a>
-    <a href="https://www.youtube.com/channel/UCFmtoIKH1ijwpGpiJBxl4dw" class="fa fa-youtube"></a>
-     </p>
-        </div>
+        height: 400px;">
+</div>
+
+</div>
+<div class="container">
+    <p>
+        <h3 style="font-weight:bold">Follow Us on Social Media</h3>
+        <a href="https://www.facebook.com/CentricConsultingNational" class="fa fa-facebook"></a>
+        <a href="https://twitter.com/centric" class="fa fa-twitter"></a>
+        <a href="https://www.linkedin.com/company/centric-consulting/" class="fa fa-linkedin"></a>
+        <a href="https://www.instagram.com/centricconsulting/" class="fa fa-instagram"></a>
+        <a href="https://www.youtube.com/channel/UCFmtoIKH1ijwpGpiJBxl4dw" class="fa fa-youtube"></a>
+    </p>
 </div>
 
