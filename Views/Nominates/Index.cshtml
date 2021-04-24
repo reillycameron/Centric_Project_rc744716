@@ -5,27 +5,32 @@
 }
 <style>
     /* Popup container */
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
+    .popup {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        border: 2px solid #ffb612;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+       
+    }
 
 /* The actual popup (appears on top) */
-.popup .popuptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -80px;
-}
+        .popup .popuptext {
+            visibility: hidden;
+            width: 160px;
+            background-color: #ffb612;
+            color: rgb(44,28,89);
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -80px;
+        }
 
 /* Popup arrow */
 .popup .popuptext::after {
@@ -58,7 +63,7 @@
 <br />
 <br />
 <div class="container">
-    <div class="well well-lg" style="        background-image: url('https://centricconsulting.com/wp-content/uploads/2020/09/Homepage-Hero-Placeholder-Image_NEW-768x436.jpg');
+    <div class="well well-lg" style="background-image: url('https://centricconsulting.com/wp-content/uploads/2020/09/Homepage-Hero-Placeholder-Image_NEW-768x436.jpg');
         border-color: #ffb612;
         border-width: medium;
         background-size: 100% 100%;
