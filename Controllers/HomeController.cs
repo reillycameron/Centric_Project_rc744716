@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Centric_Project_rc744716.DAL;
+using Centric_Project_rc744716.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,7 +14,6 @@ namespace Centric_Project_rc744716.Controllers
         {
             return View();
         }
-
         public ActionResult About()
         {
             ViewBag.Message = "This is a way for staff to recognize each other for displaying our values.";
@@ -26,5 +27,8 @@ namespace Centric_Project_rc744716.Controllers
 
             return View();
         }
+        
+    
+
     }
 }

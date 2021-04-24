@@ -3,7 +3,58 @@
 @{
     ViewBag.Title = "Nomination Feed";
 }
+<style>
+    /* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
 
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+
+</style>
+<script>
+    // When the user clicks on <div>, open the popup
+    function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
+</script>
 <br />
 <br />
 <div class="container">
@@ -14,7 +65,9 @@
         width: 1140px;
         height: 400px;"><h1 style="color:white">Nomination Feed</h1></div>
 
+
     @Html.ActionLink("Nominate an Employee", "Create", "Nominates", new { @class = "btn btn-default btn-lg", style = "color:white; background-color:rgb(44,28,89)" })
+   
 
     <button type="button" class="btn btn-info btn-lg" style="border-color: #ffb612; background-color:white; color:#ffb612; float:right;" data-toggle="modal" data-target="#myModal">Values Recognized</button>
     <div id="myModal" class="modal fade" role="dialog">
@@ -22,9 +75,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title" style="color: #ffb612">Our Values</h4>
+                    <h1 class="modal-title" style="color: #ffb612">Our Values</h1>
                 </div>
-                <div class="modal-body" style="background-color: rgb(44,28,89">
+                <div class="modal-body" style="background-color: rgb(44,28,89)">
+
                     <p style="color: white">Commit to Delivery <span style="color: #ffb612">Excellence</span></p>
                     <p style="color: white">Embrace <span style="color: #ffb612">Integrity</span> and Openness</p>
                     <p style="color: white">Practice Responsible <span style="color: #ffb612">Stewardship</span></p>
@@ -32,66 +86,88 @@
                     <p style="color: white">Ignite <span style="color: #ffb612">Passion</span> for the Greater Good</p>
                     <p style="color: white">Strive to <span style="color: #ffb612">Innovate</span></p>
                     <p style="color: white">Live a <span style="color: #ffb612">Balanced</span> Life</p>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="popup" style="color: rgb(44,28,89)" onclick="myFunction()">
+                            Total Values Nominated
+                            <span class="popuptext" id="myPopup">
+                                @{
+                                    var total = ViewBag.total;
+                                    var excellence = ViewBag.excellence;
+                                    var integrity = ViewBag.integrity;
+                                    var stewardship = ViewBag.stewardship;
+                                    var culture = ViewBag.culture;
+                                    var passion = ViewBag.passion;
+                                    var innovate = ViewBag.innovate;
+                                    var balance = ViewBag.balance;
+                                    <h5 style="color:white">Total Nominations: @total</h5>
+                                    <p style="color: white">Excellence: @excellence</p>
+                                    <p style="color: white">Integrity: @integrity</p>
+                                    <p style="color: white">Stewardship: @stewardship</p>
+                                    <p style="color: white">Culture: @culture</p>
+                                    <p style="color: white">Passion: @passion</p>
+                                    <p style="color: white">Innovate: @innovate</p>
+                                    <p style="color: white">Balanced: @balance</p>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
+                                }
+                                </div>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                            
+                        </div>
+                    </div>
             </div>
-
+</div>
+           
         </div>
-    </div>
-    </br>
-    </br>
-    <body>
-
-    </body>
-    <table class="table table-striped table-hover">
-        <tr>
-            <th class="col-sm-2">
-                Nominee
-            </th>
-            <th class="col-sm-2">
-
-                Nominated by
-            </th>
-            <th class="col-sm-2">
-
-                Date
-            </th>
-            <th class="col-sm-2">
-
-                @Html.DisplayNameFor(model => model.value)
-            </th>
-            <th class="col-sm-3">
-
-                @Html.DisplayNameFor(model => model.valueComment)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
+        </br>
+        </br>
+        <table class="table table-striped table-hover">
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.profile.fullName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Giver.fullName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.date)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.value)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.valueComment)
-                </td>
-                <td>
-                    @Html.ActionLink("Details", "Details", new { id = item.nominateID })
-                </td>
-            </tr>
-        }
+                <th class="col-sm-2">
+                    Nominee
+                </th>
+                <th class="col-sm-2">
 
-    </table>
+                    Nominated by
+                </th>
+                <th class="col-sm-2">
+
+                    Date
+                </th>
+                <th class="col-sm-2">
+
+                    @Html.DisplayNameFor(model => model.value)
+                </th>
+                <th class="col-sm-3">
+
+                    @Html.DisplayNameFor(model => model.valueComment)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.profile.fullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Giver.fullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.value)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.valueComment)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.nominateID })
+                    </td>
+                </tr>
+            }
+
+        </table>

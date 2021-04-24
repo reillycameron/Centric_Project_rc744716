@@ -22,7 +22,6 @@ namespace Centric_Project_rc744716.Controllers
         public ActionResult Index()
         {
             var nominates = db.Nominates.Include(n => n.profile).OrderByDescending(a=>a.date);
-            return View(nominates.ToList());
             var nominatesList = nominates.ToList();
             ViewBag.nominates = nominatesList;
             
@@ -43,6 +42,7 @@ namespace Centric_Project_rc744716.Controllers
             ViewBag.innovate = innCount;
             ViewBag.balance = balCount;
 
+            return View(nominates.ToList());
         }
         [Authorize]
         public ActionResult PersonalNominations()
