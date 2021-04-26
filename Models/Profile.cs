@@ -20,6 +20,8 @@ namespace Centric_Project_rc744716.Models
         [StringLength(30, ErrorMessage = "Employee Last Name must be 30 characters or less.")]
         [RegularExpression("^([a-zA-Z']+)$", ErrorMessage = "Employee last name may only include letters and an optional '")]
         public string lastName { get; set; }
+        
+        
         [Display(Name ="Employee Name")]
         [Required]
         public string fullName

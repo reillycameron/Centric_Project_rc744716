@@ -99,6 +99,7 @@ namespace Centric_Project_rc744716.Controllers
                 nominate.nominator = newProfileID;
                 db.Nominates.Add(nominate);
                 db.SaveChanges();
+                
                 return RedirectToAction("Index");
             }
 
